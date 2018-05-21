@@ -58,6 +58,8 @@ COPY agent-logback-include.xml /go-agent/config/agent-logback-include.xml
 ADD go.conf /etc/supervisor/conf.d/
 ADD supervisor.conf /etc/supervisor/supervisor.conf
 ADD init.sh /
+ADD supervisord-watchdog /
 RUN chmod +x /init.sh
+RUN chmod +x /supervisord-watchdog
 
 ENTRYPOINT ["/init.sh"]
